@@ -7,11 +7,15 @@ Toggles whether JavaScript is enabled or disabled by clicking the extension icon
 * Automatically reloads page so changes apply
 * Checks JavaScript state on startup and on reload
 
-### Installation:
+### Installation & Setup:
 1. Clone or download this repository
-2. Open ``chrome://extensions`` in Chrome
-3. Enable Developer Mode (top right)
-4. Click Load unpacked and select the downloaded repository
+   ```bash
+   git clone https://github.com/min-minimum/ToggleJS.git
+   ```
+3. Open <chrome://extensions> in Chrome
+4. Enable Developer Mode (top right)
+5. Click Load unpacked and select the downloaded repository
+6. Optionally pin the extension for easy access and click the extension icon to toggle
 
 ### Usage:
 1. Click the Toggle JS icon in the toolbar.
