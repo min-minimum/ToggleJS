@@ -13,8 +13,14 @@ function updateExtensionUI(tabId, url) {
     if (!url || url.startsWith('chrome://')) return;
     chrome.contentSettings.javascript.get({ primaryUrl: url }, (details) => {
         const isAllowed = details.setting === 'allow';
-        chrome.action.setTitle({ tabId: tabId, title: `JS: ${isAllowed ? 'ON' : 'OFF'}` });
-        chrome.action.setIcon({tabId: tabId, path: isAllowed ? 'icons/1-48.png' : 'icons/2-48.png'});
+        chrome.action.setTitle({ 
+            tabId: tabId, 
+            title: `JS: ${isAllowed ? 'ON' : 'OFF'}` 
+        }).catch(err => console.log(`Tab ${tabId} closed before title updated.`));
+        chrome.action.setIcon({
+            tabId: tabId, 
+            path: isAllowed ? 'icons/1-48.png' : 'icons/2-48.png'
+        }).catch(err => console.log(`Tab ${tabId} closed before icon updated.`));
     });
 }
 
