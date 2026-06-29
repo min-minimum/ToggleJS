@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Toggle JS",
+    "version": "1.0.0",
+    "description": "Toggle whether javascript is enabled or disabled on Chrome",
+    "icons": {
+        "48": "icons/1-48.png",
+        "128": "icons/1-128.png"
+    },
+    "permissions": ["contentSettings", "tabs", "activeTab"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+    "default_title": "Toggle JS",
+    "default_icon": {
+        "48": "icons/1-48.png"
+    }
+    }
+}
